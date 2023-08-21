@@ -1,5 +1,5 @@
 
-import { GithubUser } from "./githubUser"
+import { GithubUser } from "./githubUser.js"
 
 // classe que vai conter a lógica dos dados
 // como os dados serão estruturados
@@ -79,6 +79,7 @@ export class FavoritesView extends Favorites {
 
             row.querySelector('.user img').src = `https://github.com/${user.login}.png`
             row.querySelector('.user img').alt = `Imagem de ${user.name}`
+            row.querySelector('.user a').href = `https://github.com/${user.login}`
             row.querySelector('.user p').textContent = user.name
             row.querySelector('.user span').textContent = user.login
             row.querySelector('.repositories').textContent = user.public_repos
@@ -101,7 +102,7 @@ export class FavoritesView extends Favorites {
         tr.innerHTML = `
                     <td class="user">
                         <img src="https://github.com/biluadev.png" alt="foto do github">
-                        <a href="https://github.com/biluadev">
+                        <a href="https://github.com/biluadev" target="_blank">
                             <p>Bilua Vagnei</p>
                             <span>biluavagnei</span>
                         </a>
